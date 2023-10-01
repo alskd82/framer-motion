@@ -13,6 +13,7 @@ export default function App({ Component, pageProps }) {
         <AnimatePresence mode="wait">
             <div key={router.pathname}>
                 <Component {...pageProps} />
+                
                 <motion.div
                     className="slide-in"
                     style={{...style_slide, ...style_slideIn}}
