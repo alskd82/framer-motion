@@ -11,9 +11,8 @@ export default function App({ Component, pageProps }) {
 
     return (
         <AnimatePresence mode="wait">
-            <motion.div key={router.pathname}>
+            <div key={router.pathname}>
                 <Component {...pageProps} />
-
                 <motion.div
                     className="slide-in"
                     style={{...style_slide, ...style_slideIn}}
@@ -31,7 +30,7 @@ export default function App({ Component, pageProps }) {
                     transition={{duration: 1, ease: [0.4, 0, 0.2, 1]}}
                 ></motion.div>
 
-            </motion.div>
+            </div>
         </AnimatePresence>
     );
 }
@@ -42,7 +41,7 @@ const style_slide ={
     width: "100%", height: "100vh",
     background: "#0f0f0f",
 }
-const style_slideIn={   
+const style_slideIn = {   
     transformOrigin: "bottom"
 }
 const style_slideOut={
