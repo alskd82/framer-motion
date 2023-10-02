@@ -1,0 +1,56 @@
+
+.header{
+    background-color: #f4f0ea;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.header .background{
+    background-color: black;
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+
+.header .bar{
+    position: relative;
+    display: flex; justify-content: center;
+    text-transform: uppercase; font-size: 12px; font-weight: 400;
+}
+
+.bar p{margin: 0px;}
+.bar a{text-decoration: none; color: black; position: absolute; left: 0;}
+
+.bar .shopContainer{display: flex; gap: 30px; position: absolute; right: 0;}
+.bar .shopContainer .shop{display: none;}
+
+.bar .el{display: flex;align-items: center;justify-content: center;gap: 8px;cursor: pointer;}
+.bar .el .label{position: relative;display: flex; align-items: center;}
+.bar .el p:nth-of-type(2){position: absolute;opacity: 0;}
+.bar .el .burger{width: 22.5px; position: relative; pointer-events: none;}
+.bar .el .burger::after,
+.bar .el .burger::before{
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    position: relative;
+    display: block;
+    transition: all 1s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.bar .el .burger::after{top: -4px;}
+.bar .el .burger::before{top: 4px;}
+.bar .el .burgerActive::after{transform: rotate(45deg);top: -1px;}
+.bar .el .burgerActive::before{transform: rotate(-45deg);top: 1px;}
+
+
+@media only screen and (min-width: 600px) {
+    .header{padding: 20px;}
+    .header .bar{font-size: 15px;}
+    .header .shop{display: block;cursor: pointer;}
+}
